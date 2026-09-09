@@ -108,6 +108,19 @@ export const Contact: React.FC = () => {
                 )}
               </div>
 
+              {/* Phone */}
+              <div className="p-4 rounded-xl bg-slate-900/90 border border-slate-800 space-y-2">
+                <span className="text-xs font-mono text-slate-400 uppercase tracking-wider block">
+                  Phone
+                </span>
+                <a
+                  href={`tel:${profileData.phone.replace(/\s+/g, '')}`}
+                  className="font-mono text-sm font-bold text-sky-300 hover:underline"
+                >
+                  {profileData.phone}
+                </a>
+              </div>
+
               {/* Professional Links */}
               <div className="space-y-3 pt-2 font-mono text-xs">
                 <a

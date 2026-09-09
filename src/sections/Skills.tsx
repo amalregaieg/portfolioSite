@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { skillCategories } from '../data/skills';
 import { SectionHeader } from '../components/ui/SectionHeader';
 import { TechBadge } from '../components/ui/TechBadge';
-import { Server, Database, Layers, ShieldCheck, Workflow, Box, GitPullRequest, CheckCircle2 } from 'lucide-react';
+import { Server, Database, Layers, ShieldCheck, Workflow, Box, GitPullRequest, CheckCircle2, Code2, BarChart3 } from 'lucide-react';
 
 const iconMap: Record<string, React.ElementType> = {
   Server,
@@ -12,6 +12,8 @@ const iconMap: Record<string, React.ElementType> = {
   Workflow,
   Box,
   GitPullRequest,
+  Code2,
+  BarChart3,
 };
 
 export const Skills: React.FC = () => {

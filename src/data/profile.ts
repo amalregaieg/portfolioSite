@@ -5,10 +5,12 @@ export interface ProfileData {
   heroDescription: string;
   aboutText: string[];
   email: string;
+  phone: string;
   github: string;
   linkedin: string;
   location: string;
   availability: string;
+  avatarImage: string;
   highlights: {
     title: string;
     description: string;
@@ -24,18 +26,20 @@ export interface ProfileData {
 export const profileData: ProfileData = {
   name: "Amal Regaieg",
   title: "Tech Lead Symfony",
-  subtitle: "Senior PHP Backend Developer",
-  heroDescription: "I design and build robust, scalable and maintainable backend applications and APIs with PHP, Symfony and API Platform.",
+  subtitle: "Senior Full-Stack Developer & Scrum Master",
+  heroDescription: "I design and build robust, scalable and maintainable web applications and APIs with PHP, Symfony and API Platform — 6+ years of experience, notably in the healthcare sector.",
   aboutText: [
-    "I am a Senior PHP Backend Developer and Tech Lead specialized in Symfony and API Platform.",
-    "I work on the design, development and evolution of backend applications, REST APIs and business platforms.",
-    "My responsibilities include technical architecture, code review, refactoring, database design, API design, security, integrations, performance optimization and technical support for development teams."
+    "I am a web development engineer and Tech Lead Symfony with 6 years of experience designing, developing and maintaining complex web applications, notably in the healthcare sector.",
+    "Specialized in PHP 8, Symfony, API Platform and MySQL, I master application architecture, REST API development, third-party integrations (Stripe, Mercure, JWT) and performance optimization.",
+    "Certified Scrum Master (SM1), I have taken on technical leadership responsibilities including architecture decisions, code review, developer mentoring and team coordination, while actively supporting Agile collaboration between business and technical teams."
   ],
-  email: "contact@amal-regaieg.dev",
-  github: "https://github.com/amal-regaieg",
-  linkedin: "https://linkedin.com/in/amal-regaieg",
-  location: "Sfax / Remote",
+  email: "amal.regaieg@gmail.com",
+  phone: "+216 24 097 563",
+  github: "https://github.com/amalregaieg",
+  linkedin: "https://www.linkedin.com/in/amal-regaieg/",
+  location: "Sfax, Tunisie",
   availability: "Open to Freelance & Tech Lead Opportunities",
+  avatarImage: "/images/amal.jpg",
   highlights: [
     {
       title: "Backend Development",
@@ -44,24 +48,24 @@ export const profileData: ProfileData = {
     },
     {
       title: "Symfony Expertise",
-      description: "Mastery of Symfony components, Symfony Messenger async queues, Security bundle, Dependency Injection, and Doctrine ORM.",
+      description: "Mastery of Symfony components and API Platform, Security bundle, Dependency Injection, and Doctrine ORM for complex business applications.",
       icon: "Cpu"
     },
     {
       title: "API Architecture",
-      description: "Expert-level API Platform & custom RESTful service design, JSON:API / HAL specifications, OAuth2, and JWT auth.",
+      description: "REST API design with API Platform, third-party integrations (Stripe, Mercure, JWT) and performance optimization.",
       icon: "Network"
     },
     {
       title: "Technical Leadership",
-      description: "Architecture decision records (ADR), code reviews, technical debt reduction, SOLID coaching, and Agile practices.",
+      description: "Tech Lead & certified Scrum Master (SM1): architecture decisions, code reviews, developer mentoring and Agile team coordination.",
       icon: "Users"
     }
   ],
   stats: [
-    { label: "Core Stack Focus", value: "PHP / Symfony", subtext: "Strict Backend Specialization" },
-    { label: "API Framework", value: "API Platform", subtext: "REST, GraphQL & OpenAPI" },
-    { label: "Database Engine", value: "MySQL / Doctrine", subtext: "Query & Index Optimization" },
-    { label: "Methodology", value: "SOLID & DDD", subtext: "Clean Architecture Principles" }
+    { label: "Experience", value: "6+ Years", subtext: "Web Development & Tech Lead" },
+    { label: "Core Stack Focus", value: "PHP 8 / Symfony", subtext: "Backend Specialization" },
+    { label: "API Framework", value: "API Platform", subtext: "REST APIs & Integrations" },
+    { label: "Certification", value: "Scrum Master SM1", subtext: "Agile Team Leadership" }
   ]
 };

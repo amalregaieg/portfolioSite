@@ -17,43 +17,51 @@ export const skillCategories: SkillCategory[] = [
     description: "Core language mastery and enterprise web frameworks.",
     iconName: "Server",
     skills: [
-      { name: "PHP", isPrimary: true, description: "Modern PHP 8.x, Strict Typing, Enums, Attributes" },
-      { name: "Symfony", isPrimary: true, description: "Symfony 6/7, Dependency Injection, Services" },
-      { name: "API Platform", isPrimary: true, description: "Resources, State Providers, Filters, OpenAPI" },
-      { name: "Symfony Messenger", isPrimary: true, description: "Asynchronous Queues & Message Bus" },
-      { name: "REST API", isPrimary: true, description: "RESTful Standards, Serialization, DTOs" },
-      { name: "JWT", description: "LexikJWTAuthenticationBundle, Token lifecycle" },
-      { name: "Authentication / Authorization", description: "Security voters, RBAC, Access Control" },
-      { name: "Webhooks", description: "Idempotent listeners, payload validation, retry queues" }
+      { name: "PHP 8", isPrimary: true, description: "Modern PHP 8.x development" },
+      { name: "Symfony", isPrimary: true, description: "Symfony components, Dependency Injection, Security" },
+      { name: "API Platform", isPrimary: true, description: "REST API resources, filters, OpenAPI" },
+      { name: "REST API", isPrimary: true, description: "RESTful API design and development" },
+      { name: "Laravel", description: "Web application development" },
+      { name: "MVC Architecture", description: "Model-View-Controller design pattern" },
+      { name: "JWT", description: "Token-based authentication" },
+      { name: "Python", description: "Scripting and general-purpose programming" }
+    ]
+  },
+  {
+    id: "frontend",
+    title: "Frontend Development",
+    description: "Client-side technologies for building web interfaces.",
+    iconName: "Code2",
+    skills: [
+      { name: "JavaScript", isPrimary: true, description: "Client-side scripting and DOM interaction" },
+      { name: "HTML5", isPrimary: true, description: "Semantic markup" },
+      { name: "CSS3", isPrimary: true, description: "Styling and responsive layouts" },
+      { name: "Bootstrap", description: "Responsive UI components" }
     ]
   },
   {
     id: "database",
     title: "Database & Data Modeling",
-    description: "Relational schema architecture, query performance, and ORM mapping.",
+    description: "Relational schema design, query performance and optimization.",
     iconName: "Database",
     skills: [
-      { name: "MySQL", isPrimary: true, description: "InnoDB engine, transaction isolation, replication" },
-      { name: "SQL", isPrimary: true, description: "Complex joins, subqueries, execution plans" },
-      { name: "Database Design", isPrimary: true, description: "Normalization, ERD modeling, FK constraints" },
-      { name: "Query Optimization", isPrimary: true, description: "EXPLAIN analysis, N+1 query elimination" },
-      { name: "Indexes", description: "Composite indexes, B-Tree, FULLTEXT indexing" },
-      { name: "Data Modeling", description: "Doctrine ORM mappings, Entities, Repositories" }
+      { name: "MySQL", isPrimary: true, description: "Primary relational database engine" },
+      { name: "PostgreSQL", isPrimary: true, description: "Relational database management" },
+      { name: "Oracle", description: "Enterprise database systems" },
+      { name: "Database Design", isPrimary: true, description: "Modeling and schema design" },
+      { name: "Query Optimization", description: "Database performance tuning" }
     ]
   },
   {
     id: "architecture",
     title: "Architecture & Design",
-    description: "Architectural patterns for scalable, testable, and maintainable software.",
+    description: "Architectural patterns for scalable, maintainable software.",
     iconName: "Layers",
     skills: [
-      { name: "Clean Architecture", isPrimary: true, description: "Decoupled domain logic from framework" },
       { name: "SOLID", isPrimary: true, description: "Object-oriented design principles" },
-      { name: "Design Patterns", isPrimary: true, description: "Factory, Strategy, Command, Repository, Observer" },
-      { name: "Clean Code", description: "Self-documenting, maintainable code standards" },
-      { name: "Domain-Oriented Design", description: "Domain events, Value Objects, Aggregates" },
-      { name: "API Design", description: "OpenAPI specs, Versioning, Error formats (RFC 7807)" },
-      { name: "Scalable Backend Architecture", description: "Stateless services, Caching, Queue decoupling" }
+      { name: "REST API Design", isPrimary: true, description: "Resource modeling and API contracts" },
+      { name: "MVC", isPrimary: true, description: "Model-View-Controller architecture" },
+      { name: "Clean Code", description: "Readable, maintainable code standards" }
     ]
   },
   {
@@ -63,50 +71,58 @@ export const skillCategories: SkillCategory[] = [
     iconName: "ShieldCheck",
     skills: [
       { name: "JWT Authentication", isPrimary: true, description: "Secure token generation & verification" },
-      { name: "Access Control", isPrimary: true, description: "Role-based Voters & Granular Permissions" },
-      { name: "API Security", description: "Rate limiting, CORS, Input validation, Sanitization" },
-      { name: "Cloudflare Turnstile", description: "Bot prevention & CAPTCHA integration" },
-      { name: "Secure API Design", description: "OWASP API Security Top 10 compliance" }
+      { name: "Roles & Permissions", isPrimary: true, description: "Access control management" },
+      { name: "Security Best Practices", description: "Secure coding and API hardening" }
     ]
   },
   {
     id: "integrations",
-    title: "Integrations & Third-Party APIs",
-    description: "Seamless connection with payment processors and external services.",
+    title: "Integrations & Third-Party Services",
+    description: "Connecting applications with payment, messaging and notification services.",
     iconName: "Workflow",
     skills: [
-      { name: "Stripe", isPrimary: true, description: "Payments, Subscriptions, Invoicing API" },
-      { name: "Payment APIs", isPrimary: true, description: "PSP integration, Payment intents, Verification" },
-      { name: "Webhooks Handling", description: "Signature validation & async worker processing" },
-      { name: "Third-Party APIs", description: "REST/SOAP client integrations, HttpClient, Resilience" }
+      { name: "Stripe", isPrimary: true, description: "Payments API integration" },
+      { name: "Mercure", isPrimary: true, description: "Real-time updates via server push" },
+      { name: "Mailjet", description: "Transactional email service" },
+      { name: "Twilio", description: "SMS & communication API" }
     ]
   },
   {
     id: "devops",
-    title: "DevOps & Infrastructure",
-    description: "Containerization, environment configuration, and automated pipelines.",
+    title: "Tools & Environments",
+    description: "Version control, containerization and development environments.",
     iconName: "Box",
     skills: [
-      { name: "Docker", isPrimary: true, description: "Multi-stage builds, Docker Compose, PHP-FPM containers" },
-      { name: "Git", isPrimary: true, description: "Branching strategies, Gitflow, interactive rebase" },
-      { name: "CI/CD", isPrimary: true, description: "GitHub Actions, automated test runs, static analysis" },
-      { name: "Linux", description: "Shell scripting, server management, permissions" },
-      { name: "Deployment", description: "Automated deployment scripts, zero-downtime releases" }
+      { name: "Git", isPrimary: true, description: "Version control" },
+      { name: "GitLab", isPrimary: true, description: "Repository management & CI" },
+      { name: "Docker", description: "Basic containerization" },
+      { name: "Linux", description: "Environments & basic system administration" },
+      { name: "VS Code", description: "Development environment" },
+      { name: "PhpStorm", description: "PHP IDE" }
+    ]
+  },
+  {
+    id: "business-intelligence",
+    title: "Business Intelligence",
+    description: "Data analysis and visualization for business decision-making.",
+    iconName: "BarChart3",
+    skills: [
+      { name: "Data Analysis", isPrimary: true, description: "Extracting insight from business data" },
+      { name: "Data Visualization", isPrimary: true, description: "Presenting data for decision-making" }
     ]
   },
   {
     id: "engineering",
     title: "Engineering & Leadership",
-    description: "Team guidance, code quality standards, and development workflows.",
+    description: "Team guidance, code quality standards and Agile methodologies.",
     iconName: "GitPullRequest",
     skills: [
-      { name: "Code Review", isPrimary: true, description: "Rigorous code quality & architecture checks" },
-      { name: "Technical Documentation", isPrimary: true, description: "OpenAPI, ADRs, Setup guides, Architecture diagrams" },
-      { name: "Refactoring", description: "Legacy codebase modernization without regressions" },
-      { name: "Technical Debt Reduction", description: "Incremental cleanup strategies & refactoring plans" },
-      { name: "Debugging", description: "Xdebug, Blackfire, Symfony Profiler, Log analysis" },
-      { name: "Performance Optimization", description: "Cache strategies, OPCache, DB query tuning" },
-      { name: "Agile / Scrum", description: "Sprint planning, story estimation, Scrum ceremonies" }
+      { name: "Technical Leadership", isPrimary: true, description: "Guiding development teams" },
+      { name: "Code Review", isPrimary: true, description: "Code quality & architecture checks" },
+      { name: "Mentoring", isPrimary: true, description: "Coaching developers" },
+      { name: "Agile / Scrum", isPrimary: true, description: "Sprint planning, Scrum ceremonies" },
+      { name: "Technical Support", description: "Supporting development teams" },
+      { name: "Code Quality Improvement", description: "Raising standards across codebases" }
     ]
   }
 ];

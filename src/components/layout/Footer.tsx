@@ -26,7 +26,7 @@ export const Footer: React.FC = () => {
               {profileData.title} | {profileData.subtitle}
             </p>
             <p className="text-xs text-slate-400 leading-relaxed max-w-md font-sans">
-              Specialized in scalable backend architectures, PHP 8.3, Symfony 7, API Platform, RESTful APIs, MySQL performance, and technical leadership.
+              Specialized in PHP 8, Symfony, API Platform, REST APIs, MySQL and technical leadership, with 6+ years of experience in the healthcare sector.
             </p>
           </div>
 
@@ -36,11 +36,11 @@ export const Footer: React.FC = () => {
               Core Stack
             </h4>
             <ul className="space-y-1.5 text-xs text-slate-400 font-mono">
-              <li>• PHP 8.3 / Symfony 7</li>
+              <li>• PHP 8 / Symfony</li>
               <li>• API Platform / REST</li>
-              <li>• MySQL / SQL Tuning</li>
-              <li>• Symfony Messenger</li>
-              <li>• Docker & CI/CD</li>
+              <li>• MySQL / PostgreSQL</li>
+              <li>• Stripe / Mercure / JWT</li>
+              <li>• Agile / Scrum</li>
             </ul>
           </div>
 

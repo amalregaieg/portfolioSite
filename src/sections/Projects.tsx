@@ -32,7 +32,7 @@ export const Projects: React.FC = () => {
                 {/* Project Header Bar */}
                 <div className="p-6 sm:p-8 bg-[#111722] border-b border-slate-800 flex flex-col md:flex-row md:items-center justify-between gap-4">
                   <div className="space-y-1">
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-2 mb-2">
                       <span className="px-2.5 py-0.5 rounded bg-sky-950/80 border border-sky-500/30 text-sky-400 font-mono text-xs font-semibold">
                         {project.category}
                       </span>

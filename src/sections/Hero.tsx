@@ -26,12 +26,28 @@ export const Hero: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
-          {/* Left Column: Headlines, Positioning & CTAs */}
+          {/* Left Column: Profile Photo, Headlines, Positioning & CTAs */}
           <div className="lg:col-span-6 space-y-6 text-left">
-            {/* Senior Backend Status Badge */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900/90 border border-sky-500/30 text-sky-400 text-xs font-mono font-medium shadow-sm">
-              <span className="w-2 h-2 rounded-full bg-sky-400 animate-pulse" />
-              <span>PHP 8.3 & Symfony 7 Specialist</span>
+            {/* Header Avatar & Senior Backend Status Badge */}
+            <div className="flex items-center gap-4">
+              <div className="relative group">
+                <div className="absolute -inset-0.5 rounded-full bg-gradient-to-r from-sky-500 to-indigo-500 blur opacity-60 group-hover:opacity-100 transition-opacity" />
+                <img
+                  src={profileData.avatarImage}
+                  alt={profileData.name}
+                  className="relative w-16 h-16 sm:w-20 sm:h-20 rounded-full object-cover border-2 border-sky-400 shadow-glow-cyan"
+                />
+              </div>
+
+              <div>
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-900/90 border border-sky-500/30 text-sky-400 text-xs font-mono font-medium shadow-sm mb-1">
+                  <span className="w-2 h-2 rounded-full bg-sky-400 animate-pulse" />
+                  <span>PHP 8 & Symfony Specialist</span>
+                </div>
+                <p className="text-xs font-mono text-slate-400">
+                  {profileData.location} • Available for Missions
+                </p>
+              </div>
             </div>
 
             {/* Titles */}
@@ -52,10 +68,10 @@ export const Hero: React.FC = () => {
             {/* Emphasized Core Stack Badges */}
             <div className="flex flex-wrap gap-2 pt-1 font-mono text-xs">
               <span className="px-3 py-1 rounded bg-slate-900 border border-sky-500/40 text-sky-300 font-semibold flex items-center gap-1.5">
-                <Server className="w-3.5 h-3.5 text-sky-400" /> PHP 8.3
+                <Server className="w-3.5 h-3.5 text-sky-400" /> PHP 8
               </span>
               <span className="px-3 py-1 rounded bg-slate-900 border border-sky-500/40 text-sky-300 font-semibold flex items-center gap-1.5">
-                <Code2 className="w-3.5 h-3.5 text-sky-400" /> Symfony 7
+                <Code2 className="w-3.5 h-3.5 text-sky-400" /> Symfony
               </span>
               <span className="px-3 py-1 rounded bg-slate-900 border border-indigo-500/40 text-indigo-300 font-semibold flex items-center gap-1.5">
                 <Layers className="w-3.5 h-3.5 text-indigo-400" /> API Platform

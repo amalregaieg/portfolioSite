@@ -14,72 +14,87 @@ export interface ExperienceItem {
 
 export const experienceData: ExperienceItem[] = [
   {
-    id: "tech-lead-symfony",
-    position: "Tech Lead Symfony / PHP",
-    company: "Senior Backend Engineering & Consultancy",
-    location: "Remote / Hybrid",
-    startDate: "2022",
+    id: "tech-lead-impactdev",
+    position: "Tech Lead Symfony / Scrum Master / Full-Stack Developer",
+    company: "Impactdev",
+    location: "Sfax, Tunisie",
+    startDate: "Feb 2021",
     endDate: "Present",
     isCurrent: true,
-    description: "Leading technical architecture and backend development for mission-critical enterprise web applications, high-performance REST APIs, and business platforms built on PHP and Symfony.",
+    description: "Technical leadership and full-stack development of business-critical web applications for the healthcare sector, combining Tech Lead, Scrum Master and developer responsibilities.",
     responsibilities: [
-      "Designed robust backend architecture for complex business domains using Symfony 6/7, API Platform, and Clean Code principles.",
-      "Mentored development teams, conducted rigorous code reviews, and enforced SOLID architectural standards across codebases.",
-      "Engineered secure REST APIs with fine-grained authentication/authorization (JWT, OAuth2, Symfony Security voters).",
-      "Designed relational database schemas in MySQL, optimizing queries, indexes, and execution plans for high data volume.",
-      "Implemented asynchronous processing pipelines using Symfony Messenger for background tasks, webhooks, and third-party integrations.",
-      "Integrated payment gateways including Stripe API and webhook listener systems with strict idempotency and transaction handling.",
-      "Containerized development and production environments using Docker and Docker Compose, establishing automated CI/CD pipelines."
+      "Provided technical leadership and guidance for the development team.",
+      "Designed backend architectures using Symfony and API Platform.",
+      "Developed and maintained business web applications for the healthcare sector.",
+      "Built REST APIs and integrated third-party services (Stripe, Mercure, JWT).",
+      "Conducted code reviews, enforced best practices and improved software quality.",
+      "Collaborated with product and business teams in an Agile (Scrum) context.",
+      "Taught frameworks and PHP to undergraduate students (labs/tutorials)."
     ],
     technologies: [
-      "PHP 8.3",
-      "Symfony 7",
+      "PHP 8",
+      "Symfony",
       "API Platform",
       "MySQL",
       "REST API",
+      "Stripe",
+      "Mercure",
       "JWT",
-      "Symfony Messenger",
-      "Stripe API",
-      "Docker",
-      "CI/CD",
-      "Git",
-      "SOLID"
-    ],
-    achievements: [
-      "Reduced API query latency by optimizing database execution plans and implementing Doctrine caching strategies.",
-      "Architected event-driven asynchronous processing, eliminating blocking HTTP calls during payment processing and external webhooks."
-    ]
-  },
-  {
-    id: "senior-php-developer",
-    position: "Senior PHP Backend Developer",
-    company: "Enterprise Software & Web Solutions",
-    location: "Remote",
-    startDate: "2019",
-    endDate: "2022",
-    isCurrent: false,
-    description: "Spearheaded the development and evolution of core backend modules, microservices, and API integrations for domain-specific SaaS platforms.",
-    responsibilities: [
-      "Developed custom Symfony bundles and REST API services powering multi-tenant business platforms.",
-      "Refactored legacy backend components into decoupled, testable services adhering to Domain-Oriented Design concepts.",
-      "Optimized complex SQL queries, entity mappings, and database indexes in MySQL for improved database throughput.",
-      "Configured Cloudflare Turnstile and API security filters to protect public-facing endpoints against automated abuse.",
-      "Wrote comprehensive technical documentation, API specifications (OpenAPI/Swagger), and architecture decision records."
-    ],
-    technologies: [
-      "PHP 7.4/8.0",
-      "Symfony 5/6",
-      "API Platform",
-      "MySQL",
-      "Doctrine ORM",
-      "REST APIs",
-      "Docker",
-      "PHPUnit",
+      "Agile / Scrum",
       "Git"
     ],
     achievements: [
-      "Streamlined API development velocity by adopting API Platform for standardized OpenAPI documentation and JSON:API formatting.",
-      "Led refactoring of core authentication & authorization modules to eliminate technical debt and enforce RBAC rules."
+      "Structured Agile ceremonies and Scrum practices as Scrum Master, improving collaboration between business and technical teams.",
+      "Strengthened code quality and maintainability across the team through systematic code review and mentoring."
     ]
+  },
+  {
+    id: "enseignante-isaas",
+    position: "Enseignante Experte (University Lecturer)",
+    company: "ISAAS",
+    location: "Sfax, Tunisie",
+    startDate: "Sep 2022",
+    endDate: "Aug 2023",
+    isCurrent: false,
+    description: "Taught web development frameworks and PHP to undergraduate students, and chaired jury panels for end-of-study projects.",
+    responsibilities: [
+      "Delivered lectures and tutorials on web frameworks for 3rd-year Licence students (1st semester).",
+      "Delivered lectures and labs on PHP for 2nd-year Licence students (2nd semester).",
+      "Chaired jury panels for end-of-study (graduation) projects."
+    ],
+    technologies: ["PHP", "Web Frameworks", "Teaching", "Academic Mentoring"]
+  },
+  {
+    id: "php-symfony-minduos",
+    position: "Développeuse PHP / Symfony",
+    company: "Minduos",
+    location: "Sfax, Tunisie",
+    startDate: "Dec 2019",
+    endDate: "Aug 2020",
+    isCurrent: false,
+    description: "Development of business management and CRM applications, as well as showcase, e-commerce and e-catalog websites for clients.",
+    responsibilities: [
+      "Developed business management and CRM applications.",
+      "Built showcase websites, e-commerce and e-catalog platforms (WordPress, PrestaShop).",
+      "Developed web applications with Laravel and Symfony.",
+      "Analyzed client requirements and contributed to technical specifications."
+    ],
+    technologies: ["PHP", "Symfony", "Laravel", "WordPress", "PrestaShop", "MySQL"]
+  },
+  {
+    id: "php-zend-ict",
+    position: "Développeuse PHP / Zend",
+    company: "ICT (Innovation Computer Technology)",
+    location: "Sfax, Tunisie",
+    startDate: "Aug 2018",
+    endDate: "Jun 2019",
+    isCurrent: false,
+    description: "Development and maintenance of business management and CRM applications built on the Zend Framework.",
+    responsibilities: [
+      "Developed business management and CRM applications.",
+      "Analyzed requirements and wrote technical documentation.",
+      "Maintained and evolved existing applications."
+    ],
+    technologies: ["PHP", "Zend Framework", "MySQL"]
   }
 ];
