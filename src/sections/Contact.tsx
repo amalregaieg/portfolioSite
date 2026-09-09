@@ -2,7 +2,9 @@ import React, { useState } from 'react';
 import { profileData } from '../data/profile';
 import { SectionHeader } from '../components/ui/SectionHeader';
 import { GithubIcon, LinkedinIcon } from '../components/ui/Icons';
-import { Send, Copy, Check, Terminal, AlertCircle, MessageSquare } from 'lucide-react';
+import { Send, Copy, Check, Terminal, AlertCircle, MessageSquare, Loader2 } from 'lucide-react';
+
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xjyvpdkd';
 
 export const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -14,6 +16,8 @@ export const Contact: React.FC = () => {
 
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [submitted, setSubmitted] = useState<boolean>(false);
+  const [submitting, setSubmitting] = useState<boolean>(false);
+  const [submitError, setSubmitError] = useState<string>('');
   const [copiedEmail, setCopiedEmail] = useState<boolean>(false);
 
   const validate = () => {
@@ -38,13 +42,30 @@ export const Contact: React.FC = () => {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (validate()) {
-      setSubmitted(true);
-      setTimeout(() => {
+    if (!validate()) return;
+
+    setSubmitting(true);
+    setSubmitError('');
+
+    try {
+      const response = await fetch(FORMSPREE_ENDPOINT, {
+        method: 'POST',
+        headers: { Accept: 'application/json' },
+        body: new FormData(e.target as HTMLFormElement),
+      });
+
+      if (response.ok) {
+        setSubmitted(true);
         setFormData({ name: '', email: '', subject: '', message: '' });
-      }, 3000);
+      } else {
+        setSubmitError('Something went wrong sending your message. Please try again or email me directly.');
+      }
+    } catch {
+      setSubmitError('Network error. Please try again or email me directly.');
+    } finally {
+      setSubmitting(false);
     }
   };
 
@@ -154,10 +175,10 @@ export const Contact: React.FC = () => {
               <div className="p-4 rounded-xl bg-sky-950/20 border border-sky-500/20 text-[11px] font-mono text-sky-300 space-y-1">
                 <div className="flex items-center gap-1.5 font-bold">
                   <MessageSquare className="w-3.5 h-3.5" />
-                  <span>Integration Ready</span>
+                  <span>Direct Delivery</span>
                 </div>
                 <p className="text-slate-400 text-[10px] leading-relaxed">
-                  Form is client-side validated. Can be linked directly to Formspree, EmailJS, or Resend API key in 1 line of code.
+                  Messages sent through this form are delivered straight to my inbox.
                 </p>
               </div>
             </div>
@@ -191,6 +212,7 @@ export const Contact: React.FC = () => {
                     <input
                       type="text"
                       id="name"
+                      name="name"
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                       placeholder="e.g. Jean Dupont"
@@ -213,6 +235,7 @@ export const Contact: React.FC = () => {
                     <input
                       type="email"
                       id="email"
+                      name="email"
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                       placeholder="e.g. client@company.com"
@@ -236,6 +259,7 @@ export const Contact: React.FC = () => {
                   <input
                     type="text"
                     id="subject"
+                    name="subject"
                     value={formData.subject}
                     onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
                     placeholder="e.g. Symfony Architecture Mission / Freelance Contract"
@@ -257,6 +281,7 @@ export const Contact: React.FC = () => {
                   </label>
                   <textarea
                     id="message"
+                    name="message"
                     rows={5}
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
@@ -272,13 +297,31 @@ export const Contact: React.FC = () => {
                   )}
                 </div>
 
+                {/* Submit Error */}
+                {submitError && (
+                  <div className="p-3 rounded-lg bg-red-950/40 border border-red-500/40 text-red-300 text-xs font-mono flex items-center gap-2">
+                    <AlertCircle className="w-4 h-4 shrink-0" />
+                    <span>{submitError}</span>
+                  </div>
+                )}
+
                 {/* Submit Button */}
                 <button
                   type="submit"
-                  className="w-full py-3.5 rounded-lg bg-sky-600 hover:bg-sky-500 text-white font-mono text-xs font-semibold shadow-glow-cyan transition-all flex items-center justify-center gap-2"
+                  disabled={submitting}
+                  className="w-full py-3.5 rounded-lg bg-sky-600 hover:bg-sky-500 disabled:opacity-60 disabled:cursor-not-allowed text-white font-mono text-xs font-semibold shadow-glow-cyan transition-all flex items-center justify-center gap-2"
                 >
-                  <Send className="w-4 h-4" />
-                  <span>Send Message</span>
+                  {submitting ? (
+                    <>
+                      <Loader2 className="w-4 h-4 animate-spin" />
+                      <span>Sending...</span>
+                    </>
+                  ) : (
+                    <>
+                      <Send className="w-4 h-4" />
+                      <span>Send Message</span>
+                    </>
+                  )}
                 </button>
               </form>
             )}
